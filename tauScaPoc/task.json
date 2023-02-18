@@ -1,0 +1,39 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "7b9b82e6-c3b9-4a6e-a860-c7930c296d2f",
+    "name": "TauCodeScan-TEST",
+    "friendlyName": "Team Tau Code Scanning-TEST",
+    "description": "Test Extension",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Team TAU",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "TAU Code Scan Tools",
+    "inputs": [
+        {
+            "name": "scanTargetExtensions",
+            "type": "string",
+            "label": "Scan Targets",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Enter file extensions to scan"
+        },
+        {
+            "name": "workingDirectory",
+            "type": "string",
+            "label": "Working Directory",
+            "defaultValue": "$(WORKING_DIRECTORY)",
+            "required": true,
+            "helpMarkDown": "Enter a workingDirectory"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "tauScaPoc.js"
+        }
+    }
+}
